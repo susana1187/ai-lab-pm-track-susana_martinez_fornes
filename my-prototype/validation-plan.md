@@ -1,0 +1,15 @@
+# Validation Plan: TSOL Triage View
+
+**Hypothesis**: We believe XMI TSOLs will trust and act directly on a single consolidated view of Clean Room QA anomalies, report configuration, and BQA status — without falling back to manually checking the clean room or MCS UI separately — because the current bottleneck is information-scatter across systems, not a lack of underlying data.
+
+**What we'd compare**: Today's experience (A) — TSOL logs into MCS and the LiveRamp clean room separately, manually piecing together anomaly status, config, and BQA state across systems — versus this prototype (B), which changes one specific thing: all three data types are consolidated into one triage screen the TSOL sees immediately on login, with severity-ranked anomalies surfaced first.
+
+**The one metric that decides it**: Time for a TSOL to correctly identify what's blocking their next report refresh, from landing on the screen to naming the actual blocker (measured in a moderated walkthrough, not instrumented telemetry, since nothing is live yet).
+
+**Threshold**: A pass is TSOLs identifying the correct blocker in under 30 seconds, without asking "wait, should I also check the clean room directly?" or otherwise indicating they don't trust the consolidated view as complete. This directly targets the open question flagged in the PRFAQ's Assumption 1 red-team: does consolidation alone earn trust, or do TSOLs still re-verify elsewhere?
+
+**How to get the signal cheaply**: A moderated walkthrough with 2–3 TSOLs (or CSE resources on the shadow-client pilot, per the PRFAQ's rollout plan) using this prototype with realistic mock data. Show the screen, ask "what would you do next and why," and watch for any move to double-check outside the screen. This is the same test named in the PRFAQ's own red-team ("sit with one CSE resource during a live shadow-client run and time-stamp every moment they leave the agent's chat surface to verify something elsewhere") — this validation plan operationalizes that as a structured session rather than passive observation.
+
+**The build decision**: **Not yet.** This prototype hasn't been shown to a single TSOL yet — the trust assumption behind it (Assumption 1 in the PRFAQ's red-team) is still unverified, and it's the assumption every other design decision depends on. Before this earns engineering time toward Invite Only, run the moderated walkthrough above with at least 2 TSOLs. If they identify the blocker within threshold and don't reflexively re-verify elsewhere, that clears the bar to bring to engineering as a real build candidate. If they don't, the fix is likely in what's surfaced or how (not a full rebuild), and this prototype is the right cheap artifact to iterate against before writing any real code.
+
+> Note: the "time to identify the blocker" metric is the one I judged most decision-relevant, but whether 30 seconds is the right bar (vs. 60, vs. a relative improvement over today's process) is worth checking with Jack Foster before treating it as fixed.

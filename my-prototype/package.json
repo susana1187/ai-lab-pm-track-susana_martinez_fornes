@@ -1,0 +1,47 @@
+{
+  "name": "motif-prototype-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@liveramp/icons": "^1.0.7",
+    "@liveramp/motif": "^4.0.8",
+    "@liveramp/rich-data-table": "^2.0.8",
+    "@mui/base": "5.0.0-beta.40",
+    "@mui/envinfo": "^2.0.4",
+    "@mui/icons-material": "5.15.7",
+    "@mui/lab": "5.0.0-alpha.129",
+    "@mui/material": "5.14.13",
+    "@mui/styled-engine": "^5.2.4",
+    "@mui/styles": "^5.2.3",
+    "@mui/system": "^5.4.1",
+    "@mui/x-data-grid-premium": "6.16.1",
+    "@mui/x-license-pro": "5.15.3",
+    "chroma-js": "^2.0.6",
+    "clsx": "^1.1.1",
+    "dayjs": "^1.10.7",
+    "lodash.debounce": "^4.0.8",
+    "lodash.flattendeep": "^4.4.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.sortby": "^4.5.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-dropzone": "^11.3.4",
+    "react-window": "^1.8.6",
+    "react-window-infinite-loader": "^1.0.9",
+    "resize-observer-polyfill": "^1.5.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

@@ -1,0 +1,6 @@
+---
+description: Always load the workspace router (CLAUDE.md) into every Composer thread
+alwaysApply: true
+---
+
+@CLAUDE.md

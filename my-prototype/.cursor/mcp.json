@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "motif-mcp-http": {
+      "url": "https://motif-gen-mcp.dev.liveramp.net/mcp"
+    }
+  }
+}
